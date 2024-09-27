@@ -46,6 +46,22 @@ def available_actions(player):
 
     print("\nPlease input the NUMBER of the action you wish to take.")
     action = input("Choose an action:\n")
+    handle_action(player, action)
+
+
+def handle_action(player, action):
+    """
+    Function to handle user input and game progression through 3 levels
+    """
+    if player.location == "start":
+        if action == "1":
+            print("You walk into the forest. The light of day fades the more you walk...")
+            player.location = "forest"
+        elif action == "2":
+            player.show_status()
+        else:
+            print("Invalid action. Please ensure you are inputting a number that is avalable. Only a number will be accepted.")
+    
 
 
 def main():
