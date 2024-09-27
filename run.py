@@ -13,10 +13,11 @@ class Player:
     def show_status(self):
         print(f"\n{self.name} - HP: {self.hp}")
         print("Inventory:", ", ".join(self.inventory) if self.inventory else "Empty")
-    
+
+
 def describe_location(player):
     """
-    Function to display the current location
+    Function to display the current location and available actions
     """
     locations = {
         "start": "You are at the entrance of a dark forest. There is a path you can see ahead. It leads into the forest.",
@@ -24,6 +25,27 @@ def describe_location(player):
         "cave": "You find a cave. It is darker than the forest (somehow) and cold.. You hear growling inside.. It's getting louder."
     }
     print(locations[player.location])
+    available_actions(player)
+
+
+def available_actions(player):
+    """
+    Function to set which actions are available to users in given locations
+    """
+    if player.location == "start":
+        print("1. Enter the dark forest...")
+        print("2. Check your status")
+    elif player.location == "forest":
+        print("1. Explore deeper into the forest...")
+        print("2. Eat a shiny red apple??")
+        print("3. Check your status")
+        print("4. Return to the start")
+    elif player.location == "cave":
+        print("1. Fight the monster!!")
+        print("2. Run back to the forest...")
+
+    print("\nPlease input the NUMBER of the action you wish to take.")
+    action = input("Choose an action:\n")
 
 
 def main():
@@ -39,5 +61,6 @@ def main():
     
     player = Player(name)
     describe_location(player)
+
 
 main()
