@@ -22,7 +22,7 @@ def describe_location(player):
     locations = {
         "start": "You are at the entrance of a dark forest. There is a path you can see ahead. It leads into the forest.",
         "forest": "You have entered the forest. It's almost too dark to see. You can barely make out an apple tree with shiny red apples on it. It's quiet... too quiet.",
-        "cave": "You find a cave. It is darker than the forest (somehow) and cold.. You hear growling inside.. It's getting louder."
+        "cave": "You find a cave. It is even darker than the forest (somehow).. You hear growling inside.. It's getting louder."
     }
     print(locations[player.location])
     available_actions(player)
@@ -60,7 +60,32 @@ def handle_action(player, action):
         elif action == "2":
             player.show_status()
         else:
-            print("Invalid action. Please ensure you are inputting a number that is avalable. Only a number will be accepted.")
+            print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.")
+    elif player.location == "forest":
+        if action == "1":
+            print("You venture deeper and discover a mysterious cave... of course you go in!!")
+            player.location = "cave"
+        elif action == "2":
+            print("placeholder")
+            # CREATE A FUNCTION FOR HEALING PLAYER HERE
+        elif action == "3":
+            player.show_status()
+        elif action == "4":
+            print("You head back to where you started.. nothing has changed.")
+            player.location = "start"
+        else:
+            print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.")
+    elif player.location == "cave":
+        if action == "1":
+            print("placeholder")
+            # CREATE A FUNCTION FOR FIGHTING THE MONSTER AND INPUT HERE
+        elif action == "2":
+            print("You run back to the forest covered in sweat and other bodily fluids... how did they get there?! You're not scared...")
+            player.location = "forest"
+        else:
+            print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.")
+
+    describe_location(player)
     
 
 
