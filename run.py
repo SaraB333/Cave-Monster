@@ -107,6 +107,7 @@ def handle_action(player, action):
             else:
                 print("\n")
                 print(f"The apple healed you by {apple_heal}") # Tells the user how much the player is healed
+                print("\n")
         elif action == "3":
             player.show_status()
         elif action == "4":
@@ -138,13 +139,14 @@ def fight_monster(player):
     Handles damage to player
     """
     monster_hp = 50 # Starting hp of Monster
-    print("A feral beast emerges from the shadows. There's no chance of taming this thing... KILL IT!!!\n")
+    print("\nA feral beast emerges from the shadows. There's no chance of taming this thing... KILL IT!!!\n")
     while monster_hp > 0 and player.still_alive():
         print("Please input either 'a' or 'r' only.")
         action = input("Do you want to (a)ttack or (r)un?\n").lower() # Ensures the input will be accepted if the user inputs a capital letter
         if action == "a":
             damage = random.randint(5, 20) # Amount player will damage monster
             monster_hp -= damage
+            print("\n")
             print(f"You dealt {damage} damage to the monster.. Will it be enough??")
             if monster_hp > 0: # If monster is alive, it will attack the player
                 monster_attack = random.randint(10, 25) # Amount monster will damage player
@@ -152,8 +154,11 @@ def fight_monster(player):
                 print(f"The monster dealt {monster_attack} damage to you.")
                 print("\n")
             else:
-                print("You defeated the monster!! You loot it's bloody corpse.")
+                print("\nYou defeated the monster!! You loot it's bloody corpse.")
                 player.add_item("Monster's treasure") # Adds monsters loot to players inventory
+                print(f"Congratulations, {player.name}! You have defeated the monster and won the game! You bring the treasure back home and the town builds a statue in {player.name}'s honour! Wow!")
+                player.show_status()
+                exit()  # End the game after defeating the monster
         elif action == "r":
             print("\nYou escape back to the forest. Those apples look extra juicy...")
             player.location = "forest"
