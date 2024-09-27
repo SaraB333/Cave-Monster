@@ -19,6 +19,12 @@ class Player:
         if self.hp >= 100:
             self.hp = 100
 
+    def still_alive(self):
+        """
+        Function to determine if the player is still alive
+        """
+        return self.hp > 0
+
     def show_status(self):
         """
         Displays player conditions to user
@@ -101,7 +107,10 @@ def handle_action(player, action):
         else:
             print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.")
 
-    describe_location(player)
+    if player.still_alive():
+        describe_location(player)
+    else:
+        print(f"{player.name} has perished. Game over.")
     
 
 
