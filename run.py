@@ -55,7 +55,7 @@ def describe_location(player):
     """
     locations = {
         "start": "You are at the entrance of a dark forest. There is a path you can see ahead. It leads into the forest.",
-        "forest": "You have entered the forest. It's almost too dark to see. You can barely make out an apple tree with shiny red apples on it. It's quiet... too quiet.",
+        "forest": "It's almost too dark to see. You can barely make out an apple tree with shiny red apples on it. It's quiet... too quiet.",
         "cave": "It's even darker than the forest (somehow).. You hear growling inside.. It's getting louder."
     }
     print(locations[player.location]) # Tell the user where they are in the game
@@ -127,7 +127,7 @@ def handle_action(player, action):
         describe_location(player) # Describes the location only if the player is still alive
     else:
         print("\n")
-        print(f"{player.name} has perished. Game over.")
+        print(f"{player.name} has perished.")
     
 
 def fight_monster(player):
@@ -153,7 +153,16 @@ def fight_monster(player):
                 print("\n")
             else:
                 print("You defeated the monster!! You loot it's bloody corpse.")
-                player.add_item("Monster's treasure")
+                player.add_item("Monster's treasure") # Adds monsters loot to players inventory
+        elif action == "r":
+            print("\nYou escape back to the forest. Those apples look extra juicy...")
+            player.location = "forest"
+            return
+        else:
+            print("Invalid action. Please input either 'a' or 'r' only.")
+    
+    if not player.still_alive():
+        print("You have been slain by the monster.. You fade out to the sound of your own bones crunching... GAME OVER")
 
 
 def main():
