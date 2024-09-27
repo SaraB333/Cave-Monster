@@ -144,7 +144,7 @@ def fight_monster(player):
         print("Please input either 'a' or 'r' only.")
         action = input("Do you want to (a)ttack or (r)un?\n").lower() # Ensures the input will be accepted if the user inputs a capital letter
         if action == "a":
-            damage = random.randint(5, 20) # Amount player will damage monster
+            damage = random.randint(5, 15) # Amount player will damage monster
             monster_hp -= damage
             print("\n")
             print(f"You dealt {damage} damage to the monster.. Will it be enough??")
