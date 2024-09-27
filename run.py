@@ -1,7 +1,9 @@
 import random
 
 class Player:
-    # Player class to handle player attributes and actions
+    """
+    Player class to handle player attributes and actions
+    """
     def __init__(self, name):
         """
         Defines the initial player conditions
@@ -18,6 +20,20 @@ class Player:
         self.hp += heal
         if self.hp >= 100:
             self.hp = 100
+
+    def take_damage(self, amount):
+        """
+        Function for reducing players hp after damage is taken
+        """
+        self.hp -= amount
+        if self.hp < 0:
+            self.hp = 0
+
+    def add_item(self, item):
+        """
+        Function for adding loot if monster is defeated
+        """
+        self.inventory.append(item)
 
     def still_alive(self):
         """
@@ -42,8 +58,8 @@ def describe_location(player):
         "forest": "You have entered the forest. It's almost too dark to see. You can barely make out an apple tree with shiny red apples on it. It's quiet... too quiet.",
         "cave": "You find a cave. It is even darker than the forest (somehow).. You hear growling inside.. It's getting louder."
     }
-    print(locations[player.location])
-    available_actions(player)
+    print(locations[player.location]) # Tell the user where they are in the game
+    available_actions(player) # Tell the player what they can do
 
 
 def available_actions(player):
@@ -63,8 +79,8 @@ def available_actions(player):
         print("2. Run back to the forest...")
 
     print("\nPlease input the NUMBER of the action you wish to take.")
-    action = input("Choose an action:\n")
-    handle_action(player, action)
+    action = input("Choose an action:\n") # Input for player to use for actions
+    handle_action(player, action) # Actions the users input above
 
 
 def handle_action(player, action):
@@ -78,7 +94,7 @@ def handle_action(player, action):
         elif action == "2":
             player.show_status()
         else:
-            print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.")
+            print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.\n")
     elif player.location == "forest":
         if action == "1":
             print("You venture deeper and discover a mysterious cave... of course you go in!!")
@@ -86,17 +102,17 @@ def handle_action(player, action):
         elif action == "2":
             apple_heal = random.randint(1, 5)
             player.heal_player(apple_heal)
-            if player.hp >= 100:
+            if player.hp >= 100: # Ensures the player never goes above full health
                 print("You are at full health.\n")
             else:
-                print(f"The apple healed you by {apple_heal}")
+                print(f"The apple healed you by {apple_heal}") # Tells the user how much the player is healed
         elif action == "3":
             player.show_status()
         elif action == "4":
             print("You head back to where you started.. nothing has changed.")
             player.location = "start"
         else:
-            print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.")
+            print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.\n")
     elif player.location == "cave":
         if action == "1":
             fight_monster(player)
@@ -104,17 +120,26 @@ def handle_action(player, action):
             print("You run back to the forest covered in sweat and other bodily fluids... how did they get there?! You're not scared...")
             player.location = "forest"
         else:
-            print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.")
+            print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.\n")
 
     if player.still_alive():
-        describe_location(player)
+        describe_location(player) # Describes the location only if the player is still alive
     else:
         print(f"{player.name} has perished. Game over.")
     
 
 def fight_monster(player):
-    monster_hp = 50
-    print("A feral beast emerges from the shadows. There's no chance of taming this thing... KILL IT!!!")
+    """
+    Function to handle fighting the monster in the cave. 
+    Options for attack or run
+    Handles damage from monster and to monster
+    Handles damage to player
+    """
+    monster_hp = 50 # Starting hp of Monster
+    print("A feral beast emerges from the shadows. There's no chance of taming this thing... KILL IT!!!\n")
+    while monster_hp > 0 and player.still_alive():
+        print("Please input either 'a' or 'r' only.")
+        action = input("Do you want to (a)ttack or (r)un?\n").lower() # Ensures the input will be accepted if the user inputs a capital letter
 
 
 def main():
