@@ -9,6 +9,10 @@ class Player:
         self.hp = 100
         self.inventory = []
         self.location = "start"
+
+    def show_status(self):
+        print(f"\n{self.name} - HP: {self.hp}")
+        print("Inventory:", ", ".join(self.inventory) if self.inventory else "Empty")
     
 
 def main():
@@ -21,5 +25,8 @@ def main():
     while not name:
         print("Name cannot be blank.")
         name = input("Enter your character's name:\n").strip()
+    
+    player = Player(name)
+    player.show_status()
 
 main()
