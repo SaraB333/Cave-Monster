@@ -1,18 +1,30 @@
 import random
 
 class Player:
-    """
-    Player class to handle player attributes and actions
-    """
+    # Player class to handle player attributes and actions
     def __init__(self, name):
+        """
+        Defines the initial player conditions
+        """
         self.name = name
         self.hp = 100
         self.inventory = []
         self.location = "start"
 
+    def heal_player(self, heal):
+        """
+        Heals the player when they eat an apple (up to full health (100)).
+        """
+        self.hp += heal
+        if self.hp >= 100:
+            self.hp = 100
+
     def show_status(self):
+        """
+        Displays player conditions to user
+        """
         print(f"\n{self.name} - HP: {self.hp}")
-        print("Inventory:", ", ".join(self.inventory) if self.inventory else "Empty")
+        print("Inventory:", ", \n".join(self.inventory) if self.inventory else "Empty\n")
 
 
 def describe_location(player):
@@ -66,8 +78,12 @@ def handle_action(player, action):
             print("You venture deeper and discover a mysterious cave... of course you go in!!")
             player.location = "cave"
         elif action == "2":
-            print("placeholder")
-            # CREATE A FUNCTION FOR HEALING PLAYER HERE
+            apple_heal = random.randint(1, 5)
+            player.heal_player(apple_heal)
+            if player.hp >= 100:
+                print("You are at full health.\n")
+            else:
+                print(f"The apple healed you by {apple_heal}")
         elif action == "3":
             player.show_status()
         elif action == "4":
