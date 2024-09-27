@@ -8,6 +8,10 @@ This project is a simple Text-Based Adventure Game where the player navigates th
 
 ### Existing Features
 
+- __Player Creation__
+
+  - The user can enter a unique name for their adventurer.
+
 - __Start__
 
   - Here you can check you status or move into the forest.
