@@ -99,8 +99,7 @@ def handle_action(player, action):
             print("Invalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.")
     elif player.location == "cave":
         if action == "1":
-            print("placeholder")
-            # CREATE A FUNCTION FOR FIGHTING THE MONSTER AND INPUT HERE
+            fight_monster(player)
         elif action == "2":
             print("You run back to the forest covered in sweat and other bodily fluids... how did they get there?! You're not scared...")
             player.location = "forest"
@@ -112,6 +111,10 @@ def handle_action(player, action):
     else:
         print(f"{player.name} has perished. Game over.")
     
+
+def fight_monster(player):
+    monster_hp = 50
+    print("A feral beast emerges from the shadows. There's no chance of taming this thing... KILL IT!!!")
 
 
 def main():
