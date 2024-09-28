@@ -52,6 +52,8 @@ This project is a simple Text-Based Adventure Game where the player navigates th
 - Find more powerful healing as you go on
 - Find armor
 - Fight more monsters
+- More colour added as the player levels up and encounters more loot
+- inventory you can interact with
 
 ## Testing 
 

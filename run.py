@@ -1,4 +1,8 @@
 import random
+import time
+from colorama import init, Fore, Style
+
+init()  # Initialize colorama
 
 class Player:
     """
@@ -45,7 +49,7 @@ class Player:
         """
         Displays player conditions to user
         """
-        print(f"\n{self.name} - HP: {self.hp}")
+        print(f"\n{self.name} - HP: {Fore.GREEN}{self.hp}{Style.RESET_ALL}")
         print("Inventory:", ", \n".join(self.inventory) if self.inventory else "Empty\n")
 
 
@@ -58,8 +62,9 @@ def describe_location(player):
         "forest": "It's almost too dark to see. You can barely make out an apple tree with shiny red apples on it. It's quiet... too quiet.",
         "cave": "It's even darker than the forest (somehow).. You hear growling inside.. It's getting louder."
     }
-    print(locations[player.location]) # Tell the user where they are in the game
-    available_actions(player) # Tell the player what they can do
+    print(locations[player.location]) # Tells the user where they are in the game
+    time.sleep(1.5)  # Adds a time delay
+    available_actions(player) # Tells the player what they can do
 
 
 def available_actions(player):
@@ -103,10 +108,12 @@ def handle_action(player, action):
             apple_heal = random.randint(1, 5) # Amount apple will heal player by
             player.heal_player(apple_heal)
             if player.hp >= 100: # Ensures the player never goes above full health
-                print("\nYou are at full health.\n")
+                print("\n")
+                print(f"{Fore.GREEN}You are at full health.{Style.RESET_ALL}") # Adds colour to the text for a better player experience
+                print("\n")
             else:
                 print("\n")
-                print(f"The apple healed you by {apple_heal}") # Tells the user how much the player is healed
+                print(f"The apple healed you by {Fore.GREEN}{apple_heal}{Style.RESET_ALL}") # Tells the user how much the player is healed
                 print("\n")
         elif action == "3":
             player.show_status()
@@ -128,7 +135,7 @@ def handle_action(player, action):
         describe_location(player) # Describes the location only if the player is still alive
     else:
         print("\n")
-        print(f"{player.name} has perished.")
+        print(f"{Fore.RED}{player.name} has perished...{Style.RESET_ALL}")
     
 
 def fight_monster(player):
@@ -147,18 +154,18 @@ def fight_monster(player):
             damage = random.randint(5, 15) # Amount player will damage monster
             monster_hp -= damage
             print("\n")
-            print(f"You dealt {damage} damage to the monster.. Will it be enough??")
+            print(f"You dealt {Fore.RED}{damage}{Style.RESET_ALL} damage to the monster.. Will it be enough??")
             if monster_hp > 0: # If monster is alive, it will attack the player
                 monster_attack = random.randint(10, 25) # Amount monster will damage player
                 player.take_damage(monster_attack)
-                print(f"The monster dealt {monster_attack} damage to you.")
+                print(f"The monster dealt {Fore.RED}{monster_attack}{Style.RESET_ALL} damage to you.")
                 print("\n")
             else:
                 print("\nYou defeated the monster!! You loot it's bloody corpse.")
                 player.add_item("Monster's treasure") # Adds monsters loot to players inventory
                 print(f"Congratulations, {player.name}! You have defeated the monster and won the game! You bring the treasure back home and the town builds a statue in {player.name}'s honour! Wow!")
                 player.show_status()
-                exit()  # End the game after defeating the monster
+                exit()  # Ends the game after defeating the monster
         elif action == "r":
             print("\nYou escape back to the forest. Those apples look extra juicy...")
             player.location = "forest"
