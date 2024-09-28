@@ -1,6 +1,6 @@
 # Cave Monster
 
-This project is a simple Text-Based Adventure Game where the player navigates through different locations, encounters challenges, and makes choices that affect the game's outcome. The player will move through 3 areas: start, forest and cave. at the start nothing happens, in the forest you can either go further or eat an apple, and in the cave you will fight a monster.
+This project is a simple *Text-Based Adventure Game* where the player navigates through different locations, encounters challenges, and makes choices that affect the game's outcome. The player will move through 3 areas: start, forest and cave. at the start nothing happens, in the forest you can either go further or eat an apple, and in the cave you will fight a monster. The user will be given the option to fight or run from the monster. 
 
 ![Responsice Mockup]()
 
@@ -16,16 +16,17 @@ This project is a simple Text-Based Adventure Game where the player navigates th
 
 - __Start__
 
-  - Here you can check you status or move into the forest.
+  - Here you can check your status or move into the forest.
 
 ![Start]()
 
 - __Forest__
 
-  - Here the user has 3 options:
+  - Here the user has 4 options:
     - Check status
     - Eat apple
     - Go further
+    - Go back to start
 
 ![Forest]()
 
@@ -101,8 +102,6 @@ None that I know of.
 
 ################# NEEDS LOOKING AT ##################
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub) 
-
 
 ## Credits 
 
@@ -111,3 +110,9 @@ This section should describe the process you went through to deploy the project 
 
 - Python Documentation
   - For the official documentation that supported understanding of Python’s standard libraries and constructs. [Python Official Documentation - random](https://docs.python.org/3/library/random.html)
+
+- Digital Ocean
+  - For providing the documentation on time.sleep function used to add a time delay. [Digital Ocean](https://www.digitalocean.com/community/tutorials/python-time-sleep)
+
+- PyPI
+  - For providing documentation on colorama and how to use it. [PyPI](https://pypi.org/project/colorama/)
