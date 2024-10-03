@@ -119,3 +119,6 @@ None that I know of.
 
 - PyPI
   - For providing documentation on colorama and how to use it. [PyPI](https://pypi.org/project/colorama/)
+
+- Backslash use: '\'
+ - I used this for the use of the '\' to keep my strings under 80 characters[pep8](https://stackoverflow.com/questions/2070684/how-can-i-make-my-python-code-stay-under-80-characters-a-line#:~:text=If%20the%20code%20exceeding%2080%20chars%20is%20a%20line%20of,to%20%22escape%22%20the%20newline.&text=You%20can%20also%20use%20the%20parenthesis%20to%20your%20advantage.)
