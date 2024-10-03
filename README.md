@@ -2,7 +2,7 @@
 
 This project is a simple *Text-Based Adventure Game* where the player navigates through different locations, encounters challenges, and makes choices that affect the game's outcome. The player will move through 3 areas: start, forest and cave. at the start nothing happens, in the forest you can either go further or eat an apple, and in the cave you will fight a monster. The user will be given the option to fight or run from the monster. 
 
-![Deployed Game]()
+![Deployed Game](assets/images/main-program-screenshot.png)
 
 ## Features 
 
@@ -12,13 +12,13 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 
   - The user can enter a unique name for their adventurer.
 
-![Player]()
+![Player](assets/images/player-name.png)
 
 - __Start__
 
   - Here you can check your status or move into the forest.
 
-![Start]()
+![Start](assets/images/start-area.png)
 
 - __Forest__
 
@@ -28,7 +28,7 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
     - Go further
     - Go back to start
 
-![Forest]()
+![Forest](assets/images/forest-area.png)
 
 - __Cave__
 
@@ -38,13 +38,17 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
   - If fight is chosen, the user has the option to attack or run
   - If run is chosen the user goes back to the forest
 
-![Cave]()
+![Cave](assets/images/cave-area.png)
 
 - __Monster Fight__
 
   - In the final cave, players can choose to attack the monster or run back to the forest. Damage is randomized, and both the player and the monster take turns attacking.
 
-![Fight]()
+![Fight](assets/images/fight.png)
+
+![Attack](assets/images/attack.png)
+
+![Run](assets/images/run.png)
 
 ### Features Left to Implement
 
@@ -96,7 +100,7 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 
 - I ran the code through the [pep8 Validator](https://pep8ci.herokuapp.com/#) provided by the Code Institute.
 
-![Validator]()
+![Validator](assets/images/validator-screenshot.png)
 
 ### Unfixed Bugs
 

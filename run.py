@@ -205,7 +205,8 @@ def fight_monster(player):
                 # Adds monsters loot to players inventory
                 print(f"Congratulations, {player.name}!" +
                       "\nYou have defeated the monster and won the game!" +
-                      "\nYou bring the treasure back home and the town builds\n" +
+                      "\nYou bring the treasure back home and the town" +
+                      " builds\n" +
                       f"a statue in {player.name}'s honour! Wow!")
                 player.show_status()
                 exit()
