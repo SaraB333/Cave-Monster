@@ -138,7 +138,7 @@ def handle_action(player, action):
         elif action == "3":
             player.show_status()
         elif action == "4":
-            print("\nYou head back to where you started.." +
+            print("\nYou head back to where you started.. " +
                   "nothing has changed.")
             player.location = "start"
         else:
@@ -164,6 +164,7 @@ def handle_action(player, action):
     else:
         print("\n")
         print(f"{Fore.RED}{player.name} has perished...{Style.RESET_ALL}")
+        exit()
 
 
 def fight_monster(player):

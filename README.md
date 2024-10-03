@@ -2,7 +2,7 @@
 
 This project is a simple *Text-Based Adventure Game* where the player navigates through different locations, encounters challenges, and makes choices that affect the game's outcome. The player will move through 3 areas: start, forest and cave. at the start nothing happens, in the forest you can either go further or eat an apple, and in the cave you will fight a monster. The user will be given the option to fight or run from the monster. 
 
-![Responsice Mockup]()
+![Deployed Game]()
 
 ## Features 
 
@@ -95,6 +95,8 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 ### Validator Testing 
 
 - I ran the code through the [pep8 Validator](https://pep8ci.herokuapp.com/#) provided by the Code Institute.
+
+![Validator]()
 
 ### Unfixed Bugs
 
