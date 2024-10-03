@@ -23,7 +23,7 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 - __Forest__
 
   - Here the user has 4 options:
-    - Check status
+    - Check status (shows hp of player and inventory)
     - Eat apple
     - Go further
     - Go back to start
