@@ -94,7 +94,7 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 
 ### Validator Testing 
 
-################# NEEDS LOOKING AT ##################
+- I ran the code through the [pep8 Validator](https://pep8ci.herokuapp.com/#) provided by the Code Institute.
 
 ### Unfixed Bugs
 
@@ -109,16 +109,19 @@ None that I know of.
 ## Credits 
 
 - Code Institute
-  - For providing the learning resources and guidance that helped in building this project, particularly the Python Essentials module.
+  - The Python Essentials module was key in achieving this goal
 
 - Python Documentation
-  - For the official documentation that supported understanding of Python’s standard libraries and constructs. [Python Official Documentation - random](https://docs.python.org/3/library/random.html)
+  - For the official documentation on the random library. [Python Official Documentation - random](https://docs.python.org/3/library/random.html)
 
 - Digital Ocean
-  - For providing the documentation on time.sleep function used to add a time delay. [Digital Ocean](https://www.digitalocean.com/community/tutorials/python-time-sleep)
+  - For providing the documentation on time.sleep function used to add several time delays. [Digital Ocean](https://www.digitalocean.com/community/tutorials/python-time-sleep)
 
 - PyPI
   - For providing documentation on colorama and how to use it. [PyPI](https://pypi.org/project/colorama/)
 
 - Backslash use: '\'
  - I used this for the use of the '\' to keep my strings under 80 characters[pep8](https://stackoverflow.com/questions/2070684/how-can-i-make-my-python-code-stay-under-80-characters-a-line#:~:text=If%20the%20code%20exceeding%2080%20chars%20is%20a%20line%20of,to%20%22escape%22%20the%20newline.&text=You%20can%20also%20use%20the%20parenthesis%20to%20your%20advantage.)
+
+- Tutor Support
+ - The tutor support helped a lot in using the validator and understanding errors caused by the use of the backslash. Special thanks to Roo.
