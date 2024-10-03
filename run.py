@@ -75,15 +75,15 @@ def available_actions(player):
     Function to set which actions are available to users in given locations
     """
     if player.location == "start":
-        print("1. Enter the dark forest...")
+        print("\n1. Enter the dark forest...")
         print("2. Check your status")
     elif player.location == "forest":
-        print("1. Explore deeper into the forest...")
+        print("\n1. Explore deeper into the forest...")
         print("2. Eat a shiny red apple??")
         print("3. Check your status")
         print("4. Return to the start")
     elif player.location == "cave":
-        print("1. Fight the monster!!")
+        print("\n1. Fight the monster!!")
         print("2. Run back to the forest...")
 
     print("\nPlease input the NUMBER of the action you wish to take.")
