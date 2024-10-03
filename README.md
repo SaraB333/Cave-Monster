@@ -112,12 +112,12 @@ None that I know of.
 - Ran 'Pip3 freeze > requirements.txt' to allow for Heroku deployment.
 - Followed the video provided by the Code Institute detailing the steps involved [Code Institute Video](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/e3b664e16366444c8d722c5d8340b340/)
 - Folowed the following steps provided by the Code Institute:
- - When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
- - 1. `heroku/python`
- - 2. `heroku/nodejs`
- - You must then create a _Config Var_ called `PORT`. Set this to `8000`
- - If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
- - Connect your GitHub repository and deploy as normal.
+  - When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+  - 1. `heroku/python`
+  - 2. `heroku/nodejs`
+  - You must then create a _Config Var_ called `PORT`. Set this to `8000`
+  - If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+  - Connect your GitHub repository and deploy as normal.
 - Set deployments to Automatic in Heroku
 
 ## Credits 
@@ -135,7 +135,7 @@ None that I know of.
   - For providing documentation on colorama and how to use it. [PyPI](https://pypi.org/project/colorama/)
 
 - Backslash use: '\'
- - I used this for the use of the '\' to keep my strings under 80 characters[pep8](https://stackoverflow.com/questions/2070684/how-can-i-make-my-python-code-stay-under-80-characters-a-line#:~:text=If%20the%20code%20exceeding%2080%20chars%20is%20a%20line%20of,to%20%22escape%22%20the%20newline.&text=You%20can%20also%20use%20the%20parenthesis%20to%20your%20advantage.)
+  - I used this for the use of the '\' to keep my strings under 80 characters[pep8](https://stackoverflow.com/questions/2070684/how-can-i-make-my-python-code-stay-under-80-characters-a-line#:~:text=If%20the%20code%20exceeding%2080%20chars%20is%20a%20line%20of,to%20%22escape%22%20the%20newline.&text=You%20can%20also%20use%20the%20parenthesis%20to%20your%20advantage.)
 
 - Tutor Support
- - The tutor support helped a lot in using the validator and understanding errors caused by the use of the backslash. Special thanks to Roo.
+  - The tutor support helped a lot in using the validator and understanding errors caused by the use of the backslash. Special thanks to Roo.
