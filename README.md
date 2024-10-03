@@ -90,7 +90,7 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
   - The game was so easy I was finding it hard to test the monster winning sceanario, so to test this I made the monsters attack a lot higher. Once I was satisfied it was running fine, I changed the monsters attack back, and changed the players attack to be lower so that the game wasn't so easy.
 
 - *Deployment*
- - After deployment I realised I hadn't limited my text to 80 characters and changed the code to suit. I didn't realise at firth the indentations were wrong until trying the deployed version again. I fixed this issue and pushed once more.
+ - After deployment I realised I hadn't limited my text to 80 characters and changed the code to suit. I didn't realise at first the indentations were wrong until trying the deployed version again. I thought I had fixed the issue using the backslash method but quickly realised that wasn't the correct method to use when running the game in the terminal. When I ran the game through the validator it showed many errors, and one by one I fixed these. 
 
 ### Validator Testing 
 
