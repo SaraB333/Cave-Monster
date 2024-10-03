@@ -107,10 +107,18 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 None that I know of.
 
 ## Deployment
-
-
-################# NEEDS LOOKING AT ##################
-
+- Created Heroku account
+- Activated Student Account
+- Ran 'Pip3 freeze > requirements.txt' to allow for Heroku deployment.
+- Followed the video provided by the Code Institute detailing the steps involved [Code Institute Video](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/e3b664e16366444c8d722c5d8340b340/)
+- Folowed the following steps provided by the Code Institute:
+ - When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+ - 1. `heroku/python`
+ - 2. `heroku/nodejs`
+ - You must then create a _Config Var_ called `PORT`. Set this to `8000`
+ - If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+ - Connect your GitHub repository and deploy as normal.
+- Set deployments to Automatic in Heroku
 
 ## Credits 
 
