@@ -58,9 +58,12 @@ def describe_location(player):
     Function to display the current location and available actions
     """
     locations = {
-        "start": "You are at the entrance of a dark forest. There is a path you can see ahead. It leads into the forest.",
-        "forest": "It's almost too dark to see. You can barely make out an apple tree with shiny red apples on it. It's quiet... too quiet.",
-        "cave": "It's even darker than the forest (somehow).. You hear growling inside.. It's getting louder."
+        "start": "You are at the entrance of a dark forest. There is a path you can see ahead.\
+            It leads into the forest.",
+        "forest": "It's almost too dark to see. You can barely make out an apple tree with shiny\
+            red apples on it. It's quiet... too quiet.",
+        "cave": "It's even darker than the forest (somehow).. You hear growling inside..\
+            It's getting louder."
     }
     print(locations[player.location]) # Tells the user where they are in the game
     time.sleep(1.5)  # Adds a time delay
@@ -99,7 +102,8 @@ def handle_action(player, action):
         elif action == "2":
             player.show_status()
         else:
-            print("\nInvalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.\n")
+            print("\nInvalid action. Please ensure you input a number for an action that is avalable.\
+                Only a number will be accepted.\n")
     elif player.location == "forest":
         if action == "1":
             print("\nYou venture deeper and discover a mysterious cave... of course you go in!!")
@@ -121,15 +125,18 @@ def handle_action(player, action):
             print("\nYou head back to where you started.. nothing has changed.")
             player.location = "start"
         else:
-            print("\nInvalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.\n")
+            print("\nInvalid action. Please ensure you input a number for an action that is avalable.\
+                Only a number will be accepted.\n")
     elif player.location == "cave":
         if action == "1":
             fight_monster(player)
         elif action == "2":
-            print("\nYou run back to the forest covered in sweat and other bodily fluids... how did they get there?! You're not scared...")
+            print("\nYou run back to the forest covered in sweat and other bodily fluids...\
+                How did they get there?! You're not scared...")
             player.location = "forest"
         else:
-            print("\nInvalid action. Please ensure you are inputting a number for an action that is avalable. Only a number will be accepted.\n")
+            print("\nInvalid action. Please ensure you input a number for an action that is avalable.\
+                Only a number will be accepted.\n")
 
     if player.still_alive():
         describe_location(player) # Describes the location only if the player is still alive
@@ -146,7 +153,8 @@ def fight_monster(player):
     Handles damage to player
     """
     monster_hp = 50 # Starting hp of Monster
-    print("\nA feral beast emerges from the shadows. There's no chance of taming this thing... KILL IT!!!\n")
+    print("\nA feral beast emerges from the shadows.\
+        There's no chance of taming this thing... KILL IT!!!\n")
     while monster_hp > 0 and player.still_alive():
         print("Please input either 'a' or 'r' only.")
         action = input("Do you want to (a)ttack or (r)un?\n").lower() # Ensures the input will be accepted if the user inputs a capital letter
@@ -163,7 +171,10 @@ def fight_monster(player):
             else:
                 print("\nYou defeated the monster!! You loot it's bloody corpse.")
                 player.add_item("Monster's treasure") # Adds monsters loot to players inventory
-                print(f"Congratulations, {player.name}! You have defeated the monster and won the game! You bring the treasure back home and the town builds a statue in {player.name}'s honour! Wow!")
+                print(f"Congratulations, {player.name}!\
+                    You have defeated the monster and won the game!\
+                    You bring the treasure back home and the town builds\
+                    a statue in {player.name}'s honour! Wow!")
                 player.show_status()
                 exit()  # Ends the game after defeating the monster
         elif action == "r":
@@ -174,7 +185,11 @@ def fight_monster(player):
             print("Invalid action. Please input either 'a' or 'r' only.")
     
     if not player.still_alive():
-        print("You have been slain by the monster.. You fade out to the sound of your own bones crunching... GAME OVER")
+        print("You have been slain by the monster..")
+        time.sleep(1.5)
+        print("You fade out to the sound of your own bones crunching...")
+        time.sleep(1.5)
+        print("GAME OVER")
 
 
 def main():
