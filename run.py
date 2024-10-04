@@ -100,7 +100,7 @@ def describe_location(player):
     """
     locations = {
         "start": (f"{Fore.CYAN}You are at the entrance of a dark forest." +
-                  "There is a path you can see ahead."
+                  " There is a path you can see ahead."
                   + "\nIt leads into the forest."),
         "forest": (f"{Fore.GREEN}It's almost too dark to see."
                    + "\nYou can barely make out an apple tree"
@@ -147,7 +147,6 @@ def handle_action(player, action):
     if player.location == "start":
         if action == "1":
             clear()
-            print("\n")
             print(f"{Fore.GREEN}You walk into the forest.")
             print(f"{Fore.GREEN}The light of day fades the more you walk...")
             player.location = "forest"
@@ -185,7 +184,6 @@ def handle_action(player, action):
             player.show_status()
         elif action == "4":
             clear()
-            print("\n")
             print(f"{Fore.MAGENTA}You head back to where you started.. " +
                   "nothing has changed.")
             player.location = "start"
