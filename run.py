@@ -158,7 +158,6 @@ def handle_action(player, action):
     elif player.location == "forest":
         if action == "1":
             clear()
-            print("\n")
             print(f"{Fore.YELLOW}You venture deeper and " +
                   "discover a mysterious cave...")
             print(f"{Fore.YELLOW}Of course you go in!!")
