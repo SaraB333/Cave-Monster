@@ -64,6 +64,16 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 
 - All testing was completed using the terminal input "python3 run.py". This runs the program in the terminal showing all errors and good code. It was then all tested using the deployed version. 
 
+- *Input testing general*
+  - Things I tested:
+    - the letters a, b, g, h, l, n
+    - multiple letters abcde
+    - the number 1, 7, 9
+    - multiple numbers 123
+    - an empty ENTER with nothing entered
+    - only spaces          
+    - special characters ? ! @
+
 - *Name input*
   - I tested this in the terminal by adding a print statement after the input.
 
