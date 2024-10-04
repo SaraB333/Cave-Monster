@@ -60,6 +60,11 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 - __Play Again Option__
   - Function to ask the player if they want to play again or exit. This adds clarity for the user that the game has ended or they can start again. 
 
+- __*if __name__ == "__main__":*__
+  - This condition checks whether the script is being run directly or imported.
+  - If the script is executed directly, __name__ will be equal to "__main__", and the block of code under this if statement will execute.
+  - If the script is imported as a module, the block of code under this if statement will not execute.
+
 ### Features Left to Implement
 
 - More levels / areas
@@ -127,6 +132,7 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 - When inputting before the input is asked for the program still accepts the input and acts on it. 
 
 ## Deployment
+
 - Created Heroku account
 - Activated Student Account
 - Ran 'Pip3 freeze > requirements.txt' to allow for Heroku deployment.
@@ -162,3 +168,7 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 
 - Mentor Support
   - Rory helped me understand what parts of the project needed improving on and gave incredible pointers that helped to make the project pass worthy.
+  - Help with the end of program:
+      - if __name__ == "__main__":
+      - main()
+  

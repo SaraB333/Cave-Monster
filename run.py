@@ -275,4 +275,6 @@ def main():
     describe_location(player)
 
 
-main()
+if __name__ == "__main__":
+    # checks whether the script is being run directly or imported.
+    main()
