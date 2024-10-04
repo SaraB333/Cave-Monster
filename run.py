@@ -169,12 +169,10 @@ def handle_action(player, action):
             player.heal_player(apple_heal)
             if player.hp >= 100:
                 # Ensures the player never goes above full health
-                print("\n")
                 print(f"{Fore.GREEN}You are at full health.")
                 # Adds colour to the text for a better player experience
                 print("\n")
             else:
-                print("\n")
                 print(f"The apple healed you by {Fore.GREEN}{apple_heal}")
                 # Tells the user how much the player is healed
                 print("\n")
