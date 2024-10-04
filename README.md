@@ -167,7 +167,7 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
   - The tutor support helped a lot in using the validator and understanding errors caused by the use of the backslash. Special thanks to Roo.
 
 - Mentor Support
-  - Rory helped me understand what parts of the project needed improving on and gave incredible pointers that helped to make the project pass worthy.
+  - Rory helped me understand what parts of the project needed improving on and gave incredible pointers that helped to make the project a lot better.
   - Help with the end of program:
       - if __name__ == "__main__":
       - main()
