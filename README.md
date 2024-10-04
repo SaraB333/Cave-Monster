@@ -57,6 +57,9 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 - __Clear function__
   - The clear function helps keep the terminal from getting too clogged up with the adventure as it unfolds. User experience is improved with clarity.
 
+- __Play Again Option__
+  - Function to ask the player if they want to play again or exit. This adds clarity for the user that the game has ended or they can start again. 
+
 ### Features Left to Implement
 
 - More levels / areas
@@ -71,15 +74,15 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 
 - All testing was completed using the terminal input "python3 run.py". This runs the program in the terminal showing all errors and good code. It was then all tested using the deployed version. 
 
-- *Input testing general*
+- *Input testing general (ALL INPUTS)*
   - Things I tested:
     - the letters a, b, g, h, l, n
     - multiple letters abcde
     - the number 1, 7, 9
-    - multiple numbers 123
+    - multiple numbers 12345
     - an empty ENTER with nothing entered
     - only spaces          
-    - special characters ? ! @
+    - special characters ? ! @ / \ |
 
 - *Name input*
   - I tested this in the terminal by adding a print statement after the input.
