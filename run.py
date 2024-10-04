@@ -3,7 +3,9 @@ import time
 import os
 from colorama import init, Fore, Style
 
-init()  # Initialize colorama
+init(autoreset=True)
+# Initialize colorama
+# Auto reset styles after a print statement
 
 
 class Player:
