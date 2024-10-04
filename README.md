@@ -50,6 +50,10 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 
 ![Run](assets/images/run.png)
 
+- __Use of Player Class__
+
+  - The Player class has all of the relevant attributes and actions associated with the player character, such as health (hp), inventory management, and movement between locations. By using this class, the game can track and manipulate player-specific information in an organized manner.
+
 ### Features Left to Implement
 
 - More levels / areas
@@ -114,7 +118,7 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 
 ### Unfixed Bugs
 
-None that I know of.
+- When inputting before the input is asked for the program still accepts the input and acts on it. 
 
 ## Deployment
 - Created Heroku account
@@ -149,3 +153,6 @@ None that I know of.
 
 - Tutor Support
   - The tutor support helped a lot in using the validator and understanding errors caused by the use of the backslash. Special thanks to Roo.
+
+- Mentor Support
+  - Rory helped me understand what parts of the project needed improving on and gave incredible pointers that helped to make the project pass worthy.
