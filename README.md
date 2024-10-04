@@ -54,6 +54,9 @@ This project is a simple *Text-Based Adventure Game* where the player navigates 
 
   - The Player class has all of the relevant attributes and actions associated with the player character, such as health (hp), inventory management, and movement between locations. By using this class, the game can track and manipulate player-specific information in an organized manner.
 
+- __Clear function__
+  - The clear function helps keep the terminal from getting too clogged up with the adventure as it unfolds. User experience is improved with clarity.
+
 ### Features Left to Implement
 
 - More levels / areas
