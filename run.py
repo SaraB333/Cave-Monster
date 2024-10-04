@@ -63,6 +63,24 @@ def clear():
     os.system("cls" if os.name == "nt" else "clear")
 
 
+def play_again():
+    """
+    Function to ask the player if they want to play again or exit.
+    """
+    while True:
+        choice = input("\nWould you like to play " +
+                       "again? (yes/no):\n").lower().strip()
+        if choice == "yes":
+            clear()
+            main()  # Restart the game by calling main()
+            break
+        elif choice == "no":
+            print("Thanks for playing! Goodbye!")
+            exit()
+        else:
+            print("Invalid input. Please type 'yes' or 'no'.")
+
+
 def describe_location(player):
     """
     Function to display the current location and available actions
@@ -180,7 +198,7 @@ def handle_action(player, action):
     else:
         print("\n")
         print(f"{Fore.RED}{player.name} has perished...{Style.RESET_ALL}")
-        exit()
+        play_again()
 
 
 def fight_monster(player):
@@ -219,14 +237,13 @@ def fight_monster(player):
                       "You loot it's bloody corpse.")
                 player.add_item("Monster's treasure")
                 # Adds monsters loot to players inventory
+                player.show_status()
                 print(f"Congratulations, {player.name}!" +
                       "\nYou have defeated the monster and won the game!" +
                       "\nYou bring the treasure back home and the town" +
                       " builds\n" +
                       f"a statue in {player.name}'s honour! Wow!")
-                player.show_status()
-                exit()
-                # Ends the game after defeating the monster
+                play_again()
         elif action == "r":
             print("\nYou escape back to the forest." +
                   "\nThose apples look extra juicy...")
