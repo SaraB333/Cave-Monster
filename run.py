@@ -1,5 +1,6 @@
 import random
 import time
+import os
 from colorama import init, Fore, Style
 
 init()  # Initialize colorama
@@ -55,6 +56,13 @@ class Player:
               if self.inventory else "Empty\n")
 
 
+def clear():
+    """
+    Clear function to clean-up the terminal so things don't get messy.
+    """
+    os.system("cls" if os.name == "nt" else "clear")
+
+
 def describe_location(player):
     """
     Function to display the current location and available actions
@@ -105,10 +113,12 @@ def handle_action(player, action):
     """
     if player.location == "start":
         if action == "1":
+            clear()
             print("\nYou walk into the forest.")
             print("The light of day fades the more you walk...")
             player.location = "forest"
         elif action == "2":
+            clear()
             player.show_status()
         else:
             print("\nInvalid action. Please ensure you input a number" +
@@ -116,10 +126,12 @@ def handle_action(player, action):
             print("Only a number will be accepted.\n")
     elif player.location == "forest":
         if action == "1":
+            clear()
             print("\nYou venture deeper and discover a mysterious cave...")
             print("Of course you go in!!")
             player.location = "cave"
         elif action == "2":
+            clear()
             apple_heal = random.randint(1, 5)
             # Amount apple will heal player by
             player.heal_player(apple_heal)
@@ -136,8 +148,10 @@ def handle_action(player, action):
                 # Tells the user how much the player is healed
                 print("\n")
         elif action == "3":
+            clear()
             player.show_status()
         elif action == "4":
+            clear()
             print("\nYou head back to where you started.. " +
                   "nothing has changed.")
             player.location = "start"
@@ -147,8 +161,10 @@ def handle_action(player, action):
             print("Only a number will be accepted.\n")
     elif player.location == "cave":
         if action == "1":
+            clear()
             fight_monster(player)
         elif action == "2":
+            clear()
             print("\nYou run back to the forest covered in sweat" +
                   " and other bodily fluids...\nHow did they get there?! "
                   + "You're not scared...")
