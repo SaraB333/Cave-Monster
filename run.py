@@ -77,10 +77,21 @@ def play_again():
             main()  # Restart the game by calling main()
             break
         elif choice == "no":
-            print("Thanks for playing! Goodbye!")
+            print(f"{Fore.GREEN}Thanks for playing! Goodbye!")
             exit()
         else:
-            print("Invalid input. Please type 'yes' or 'no'.")
+            print(f"{Fore.RED}Invalid input. Please type 'yes' or 'no'.")
+
+
+def error_message_numbers():
+    """
+    prints an error message if a number input is incorrectly input
+    """
+    clear()
+    print(f"{Fore.RED}Invalid action. Please ensure you input " +
+          "a number for an action that is avalable.")
+    print(f"{Fore.MAGENTA}Only a number will be accepted.")
+    print("\n")
 
 
 def describe_location(player):
@@ -88,13 +99,15 @@ def describe_location(player):
     Function to display the current location and available actions
     """
     locations = {
-        "start": ("You are at the entrance of a dark forest. There is a path "
-                  + "you can see ahead.\nIt leads into the forest."),
-        "forest": ("It's almost too dark to see.\nYou can barely make out an "
-                   + "apple tree with shiny red apples on it." +
+        "start": (f"{Fore.CYAN}You are at the entrance of a dark forest." +
+                  "There is a path you can see ahead."
+                  + "\nIt leads into the forest."),
+        "forest": (f"{Fore.GREEN}It's almost too dark to see."
+                   + "\nYou can barely make out an apple tree"
+                   + " with shiny red apples on it." +
                    "\nIt's quiet... too quiet."),
-        "cave": ("It's even darker than the forest (somehow).. " +
-                 "You hear growling inside..\nIt's getting louder.")
+        "cave": (f"{Fore.YELLOW}It's even darker than the forest (some" +
+                 "how).. You hear growling inside..\nIt's getting louder.")
     }
     print(locations[player.location])
     # Tells the user where they are in the game
@@ -134,21 +147,22 @@ def handle_action(player, action):
     if player.location == "start":
         if action == "1":
             clear()
-            print("\nYou walk into the forest.")
-            print("The light of day fades the more you walk...")
+            print("\n")
+            print(f"{Fore.GREEN}You walk into the forest.")
+            print(f"{Fore.GREEN}The light of day fades the more you walk...")
             player.location = "forest"
         elif action == "2":
             clear()
             player.show_status()
         else:
-            print("\nInvalid action. Please ensure you input a number" +
-                  " for an action that is avalable.")
-            print("Only a number will be accepted.\n")
+            error_message_numbers()
     elif player.location == "forest":
         if action == "1":
             clear()
-            print("\nYou venture deeper and discover a mysterious cave...")
-            print("Of course you go in!!")
+            print("\n")
+            print(f"{Fore.YELLOW}You venture deeper and " +
+                  "discover a mysterious cave...")
+            print(f"{Fore.YELLOW}Of course you go in!!")
             player.location = "cave"
         elif action == "2":
             clear()
@@ -158,13 +172,12 @@ def handle_action(player, action):
             if player.hp >= 100:
                 # Ensures the player never goes above full health
                 print("\n")
-                print(f"{Fore.GREEN}You are at full health.{Style.RESET_ALL}")
+                print(f"{Fore.GREEN}You are at full health.")
                 # Adds colour to the text for a better player experience
                 print("\n")
             else:
                 print("\n")
-                print(f"The apple healed you by {Fore.GREEN}{apple_heal}"
-                      + "{Style.RESET_ALL}")
+                print(f"The apple healed you by {Fore.GREEN}{apple_heal}")
                 # Tells the user how much the player is healed
                 print("\n")
         elif action == "3":
@@ -172,27 +185,24 @@ def handle_action(player, action):
             player.show_status()
         elif action == "4":
             clear()
-            print("\nYou head back to where you started.. " +
+            print("\n")
+            print(f"{Fore.MAGENTA}You head back to where you started.. " +
                   "nothing has changed.")
             player.location = "start"
         else:
-            print("\nInvalid action. Please ensure you input a number" +
-                  " for an action that is avalable.")
-            print("Only a number will be accepted.\n")
+            error_message_numbers()
     elif player.location == "cave":
         if action == "1":
             clear()
             fight_monster(player)
         elif action == "2":
             clear()
-            print("\nYou run back to the forest covered in sweat" +
-                  " and other bodily fluids...\nHow did they get there?! "
-                  + "You're not scared...")
+            print(f"{Fore.MAGENTA}You run back to the forest " +
+                  "covered in sweat and other bodily fluids...\nHow "
+                  + "did they get there?! You're not scared...")
             player.location = "forest"
         else:
-            print("\nInvalid action. Please ensure you input a number" +
-                  " for an action that is avalable.")
-            print("Only a number will be accepted.\n")
+            error_message_numbers()
 
     if player.still_alive():
         describe_location(player)
@@ -212,9 +222,11 @@ def fight_monster(player):
     """
     monster_hp = 50
     # Starting hp of Monster
-    print("\nA feral beast emerges from the shadows." +
+    print("\n")
+    print(f"{Fore.RED}A feral beast emerges from the shadows." +
           "\nThere's no chance of taming this thing... KILL IT!!!\n")
     while monster_hp > 0 and player.still_alive():
+        time.sleep(1)
         print("Please input either 'a' or 'r' only.")
         action = input("Do you want to (a)ttack or (r)un?\n").lower()
         # Ensures the input will be accepted if the user inputs uppercase
@@ -235,31 +247,36 @@ def fight_monster(player):
                       + " damage to you.")
                 print("\n")
             else:
-                print("\nYou defeated the monster!! " +
+                print("\n")
+                print(f"{Fore.GREEN}You defeated the monster!! " +
                       "You loot it's bloody corpse.")
                 player.add_item("Monster's treasure")
                 # Adds monsters loot to players inventory
                 player.show_status()
-                print(f"Congratulations, {player.name}!" +
+                print(f"{Fore.CYAN}Congratulations, {player.name}!" +
                       "\nYou have defeated the monster and won the game!" +
                       "\nYou bring the treasure back home and the town" +
                       " builds\n" +
                       f"a statue in {player.name}'s honour! Wow!")
                 play_again()
         elif action == "r":
-            print("\nYou escape back to the forest." +
+            print(f"{Fore.MAGENTA}You escape back to the forest." +
                   "\nThose apples look extra juicy...")
             player.location = "forest"
             return
         else:
-            print("Invalid action. Please input either 'a' or 'r' only.")
+            print("\n")
+            print(f"{Fore.RED}Invalid action. Please input either"
+                  + " 'a' or 'r' only.")
+            print("\n")
 
     if not player.still_alive():
-        print("You have been slain by the monster..")
+        print(f"{Fore.RED}You have been slain by the monster..")
         time.sleep(1.5)
-        print("You fade out to the sound of your own bones crunching...")
+        print(f"{Fore.RED}You fade out to the sound" +
+              " of your own bones crunching...")
         time.sleep(1.5)
-        print("GAME OVER")
+        print(f"{Fore.RED}GAME OVER")
 
 
 def main():
