@@ -217,7 +217,6 @@ def fight_monster(player):
     """
     monster_hp = 50
     # Starting hp of Monster
-    print("\n")
     print(f"{Fore.RED}A feral beast emerges from the shadows." +
           "\nThere's no chance of taming this thing... KILL IT!!!\n")
     while monster_hp > 0 and player.still_alive():
